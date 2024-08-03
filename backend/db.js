@@ -2,14 +2,14 @@ const mongoose = require("mongoose");
 
 mongoose.connect("mongodb://localhost:27017/paytm");
 
-const UserSchema = mongoose.Schema({
+const userSchema = mongoose.Schema({
   username: String,
   password: String,
   firstName: String,
   lastName: String,
 });
 
-const UserSchemaHard = mongoose.Schema({
+const userSchemaHard = mongoose.Schema({
   username: {
     type: String,
     required: true,
@@ -39,8 +39,22 @@ const UserSchemaHard = mongoose.Schema({
   },
 });
 
-const User = mongoose.model("user", UserSchema);
+const accountSchema = mongoose.Schema({
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
+  balance: {
+    type: Number,
+    required: true,
+  },
+});
+
+const User = mongoose.model("user", userSchema);
+const Account = mongoose.model("account", accountSchema);
 
 module.exports = {
   User,
+  Account,
 };
