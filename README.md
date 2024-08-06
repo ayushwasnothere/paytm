@@ -61,7 +61,7 @@ Ensure you have the following installed on your local machine:
 
    Ensure Tailwind CSS and Vite are set up in the frontend by including the necessary configuration files. You can find the Tailwind CSS setup and Vite configuration in the `frontend` directory.
 
-The application should now be running on `http://localhost:3000` for the frontend and `http://localhost:5000` for the backend.
+The application should now be running on `http://localhost:5173` for the frontend and `http://localhost:3000` for the backend.
 
 ## Project Structure
 
