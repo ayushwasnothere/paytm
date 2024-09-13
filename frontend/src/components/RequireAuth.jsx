@@ -1,10 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { BACKEND_URL } from "../../config";
 
 export const RequireAuth = ({ children }) => {
-  const navigate = useNavigate();
   const [isLogged, setIsLogged] = useState();
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -22,7 +21,7 @@ export const RequireAuth = ({ children }) => {
       });
   }, []);
   if (!isLogged) {
-    navigate("/signin");
+    return <Navigate to="/signup" replace={true} />;
   } else {
     return children;
   }

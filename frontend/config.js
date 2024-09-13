@@ -1,1 +1,1 @@
-export const BACKEND_URL = "api.pay-app.citxruzz.online";
+export const BACKEND_URL = "https://api.pay-app.citxruzz.online";
