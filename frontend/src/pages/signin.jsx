@@ -32,7 +32,7 @@ export const SignIn = () => {
           <Button
             onClick={async () => {
               const res = await axios.post(
-                `${BACKEND_URL}/api/v1/user/signup`,
+                `${BACKEND_URL}/api/v1/user/signin`,
                 {
                   username,
                   password,

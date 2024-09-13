@@ -35,7 +35,7 @@ export const Send = () => {
             onClick={() => {
               axios
                 .post(
-                  `${BACKEND_URL}/api/v1/user/signup`,
+                  `${BACKEND_URL}/api/v1/account/transfer`,
                   {
                     to: id,
                     amount,
