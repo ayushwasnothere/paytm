@@ -2,6 +2,7 @@ import { useSearchParams } from "react-router-dom";
 import { Heading } from "../components/Heading";
 import axios from "axios";
 import { useState } from "react";
+import { BACKEND_URL } from "../../config";
 
 export const Send = () => {
   const [searchParams] = useSearchParams();
@@ -34,7 +35,7 @@ export const Send = () => {
             onClick={() => {
               axios
                 .post(
-                  "http://localhost:3000/api/v1/account/transfer",
+                  `${BACKEND_URL}/api/v1/user/signup`,
                   {
                     to: id,
                     amount,

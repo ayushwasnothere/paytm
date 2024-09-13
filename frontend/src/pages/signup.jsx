@@ -6,6 +6,7 @@ import { InputBox } from "../components/InputBox";
 import { SubHeading } from "../components/SubHeading";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { BACKEND_URL } from "../../config";
 
 export const SignUp = () => {
   const [firstName, setFirstName] = useState("");
@@ -43,7 +44,7 @@ export const SignUp = () => {
           <Button
             onClick={async () => {
               const res = await axios.post(
-                "http://localhost:3000/api/v1/user/signup",
+                `${BACKEND_URL}/api/v1/user/signup`,
                 {
                   username,
                   password,

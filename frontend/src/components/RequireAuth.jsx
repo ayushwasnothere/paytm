@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BACKEND_URL } from "../../config";
 
 export const RequireAuth = ({ children }) => {
   const navigate = useNavigate();
@@ -8,7 +9,7 @@ export const RequireAuth = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:3000/api/v1/user/me", {
+      .get(`${BACKEND_URL}/api/v1/user/me`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

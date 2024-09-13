@@ -3,13 +3,14 @@ import { Button } from "./Button";
 import { Heading } from "./Heading";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { BACKEND_URL } from "../../config";
 
 export const Appbar = () => {
   const [firstName, setFirstName] = useState("");
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/v1/user/me", {
+      .get(`${BACKEND_URL}/api/v1/user/me`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
